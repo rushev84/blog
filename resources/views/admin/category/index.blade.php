@@ -37,7 +37,7 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Название категории</th>
+                                        <th>Название</th>
                                         <th colspan="3">Действия</th>
                                     </tr>
                                     </thead>
