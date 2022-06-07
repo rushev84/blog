@@ -74,7 +74,9 @@
                                 <label>Выберите категорию</label>
                                 <select name="category_id" class="form-control">
                                     @foreach($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                    <option value="{{ $category->id }}"
+                                    {{ $category->id == old('category_id') ? ' selected' : '' }}
+                                    >{{ $category->title }}</option>
                                     @endforeach
                                 </select>
                             </div>
