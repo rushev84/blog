@@ -51,6 +51,9 @@
                                         <span class="input-group-text">Загрузка</span>
                                     </div>
                                 </div>
+                                @error('preview_image')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group w-50">
                                 <label for="exampleInputFile">Добавить главное изображение</label>
@@ -63,6 +66,9 @@
                                         <span class="input-group-text">Загрузка</span>
                                     </div>
                                 </div>
+                                @error('main_image')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-group w-50">
                                 <label>Выберите категорию</label>
