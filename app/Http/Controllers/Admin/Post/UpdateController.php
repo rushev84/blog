@@ -11,16 +11,30 @@ class UpdateController extends Controller
 {
     public function __invoke(UpdateRequest $request, Post $post)
     {
+
+
         $data = $request->validated();
 
-        $tagIds = $data['tag_ids'];
-        unset($data['tag_ids']);
+        // Не работает, если совсем нет тэгов
+
+        if (isset($data['tag_ids'])) {
+
+            $tagIds = $data['tag_ids'];
+
+            unset($data['tag_ids']);
+
+            $post->tags()->sync($tagIds);
+
+        }
+
+        // Тут тоже надо разобраться
 
         $data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
         $data['main_image'] = Storage::disk('public')->put('/images', $data['main_image']);
 
+
         $post->update($data);
-        $post->tags()->sync($tagIds);
+
 
         return view('admin.post.show', compact('post'));
     }

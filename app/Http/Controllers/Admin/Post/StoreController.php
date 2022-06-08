@@ -14,6 +14,8 @@ class StoreController extends Controller
         try {
             $data = $request->validated();
 
+//            dd($data);
+
             $tagIds = $data['tag_ids'];
             unset($data['tag_ids']);
 
