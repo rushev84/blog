@@ -37,7 +37,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <textarea id="summernote" name="content">{{ $post->content }}</textarea>
+                            <textarea id="summernote" name="content">{{ old('content', $post->content) }}</textarea>
                             @error('content')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
