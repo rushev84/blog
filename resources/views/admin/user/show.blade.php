@@ -8,8 +8,8 @@
             <div class="row mb-2">
                 <div class="col-sm-6 d-flex align-items-center">
                     <h1 class="m-0 mr-2">{{ $user->name }}</h1>
-                    <a href="{{ route('admin.category.edit', $user->id) }}"><i class="fas fa-pencil-alt text-success"></i></a>
-                    <form action="{{ route('admin.category.delete', $user->id) }}"
+                    <a href="{{ route('admin.user.edit', $user->id) }}"><i class="fas fa-pencil-alt text-success"></i></a>
+                    <form action="{{ route('admin.user.delete', $user->id) }}"
                           method="post">
                         @csrf
                         @method('delete')
