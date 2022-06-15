@@ -5,7 +5,7 @@
         <div class="container">
             <h1 class="edica-page-title" data-aos="fade-up">{{ $post->title }}</h1>
             <p class="edica-blog-post-meta" data-aos="fade-up"
-               data-aos-delay="200">{{ $date->translatedFormat('F') . ' ' .$date->day . ' ' . $date->year . ', ' . $date->format('H:i') . ' | ' . $post->comments->count() . ' комментария'}}</p>
+               data-aos-delay="200">{{ $date->translatedFormat('d F Y') . ', ' . $date->format('H:i') . ' | ' . $post->comments->count() . ' комментария'}}</p>
             <section class="blog-post-featured-img" data-aos="fade-up" data-aos-delay="300">
                 <img src="{{ asset('/storage/' . $post->main_image) }}" alt="featured image" class="w-100">
             </section>
