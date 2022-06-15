@@ -7,15 +7,15 @@
             <section class="featured-posts-section">
                 <div class="row">
                     @foreach($posts as $post)
-                    <div class="col-md-4 fetured-post blog-post" data-aos="fade-up">
-                        <div class="blog-post-thumbnail-wrapper">
-                            <img src="{{ '/storage/' . $post->preview_image }}" alt="blog post">
+                        <div class="col-md-4 fetured-post blog-post" data-aos="fade-up">
+                            <div class="blog-post-thumbnail-wrapper">
+                                <img src="{{ asset('/storage/' . $post->preview_image) }}" alt="blog post">
+                            </div>
+                            <p class="blog-post-category">{{ $post->category->title }}</p>
+                            <a href="{{ route('post.show', $post->id) }}" class="blog-post-permalink">
+                                <h6 class="blog-post-title">{{ $post->title }}</h6>
+                            </a>
                         </div>
-                        <p class="blog-post-category">{{ $post->category->title }}</p>
-                        <a href="{{ route('post.show', $post->id) }}" class="blog-post-permalink">
-                            <h6 class="blog-post-title">{{ $post->title }}</h6>
-                        </a>
-                    </div>
                     @endforeach
                 </div>
                 <div class="row">
@@ -29,15 +29,15 @@
                     <section>
                         <div class="row blog-post-row">
                             @foreach($randomPosts as $post)
-                            <div class="col-md-6 blog-post" data-aos="fade-up">
-                                <div class="blog-post-thumbnail-wrapper">
-                                    <img src="{{ '/storage/' . $post->preview_image }}" alt="blog post">
+                                <div class="col-md-6 blog-post" data-aos="fade-up">
+                                    <div class="blog-post-thumbnail-wrapper">
+                                        <img src="{{ asset('/storage/' . $post->preview_image) }}" alt="blog post">
+                                    </div>
+                                    <p class="blog-post-category">{{ $post->category->title }}</p>
+                                    <a href="{{ route('post.show', $post->id) }}" class="blog-post-permalink">
+                                        <h6 class="blog-post-title">{{ $post->title }}</h6>
+                                    </a>
                                 </div>
-                                <p class="blog-post-category">{{ $post->category->title }}</p>
-                                <a href="{{ route('post.show', $post->id) }}" class="blog-post-permalink">
-                                    <h6 class="blog-post-title">{{ $post->title }}</h6>
-                                </a>
-                            </div>
                             @endforeach
                         </div>
                         <div class="row blog-post-row">
@@ -47,7 +47,8 @@
                                 </div>
                                 <p class="blog-post-category">Blog post</p>
                                 <a href="#!" class="blog-post-permalink">
-                                    <h6 class="blog-post-title">Front becomes an official Instagram Marketing Partner</h6>
+                                    <h6 class="blog-post-title">Front becomes an official Instagram Marketing
+                                        Partner</h6>
                                 </a>
                             </div>
                             <div class="col-md-6 blog-post" data-aos="fade-up">
@@ -56,7 +57,8 @@
                                 </div>
                                 <p class="blog-post-category">Blog post</p>
                                 <a href="#!" class="blog-post-permalink">
-                                    <h6 class="blog-post-title">Front becomes an official Instagram Marketing Partner</h6>
+                                    <h6 class="blog-post-title">Front becomes an official Instagram Marketing
+                                        Partner</h6>
                                 </a>
                             </div>
                         </div>
@@ -67,7 +69,8 @@
                                 </div>
                                 <p class="blog-post-category">Blog post</p>
                                 <a href="#!" class="blog-post-permalink">
-                                    <h6 class="blog-post-title">Front becomes an official Instagram Marketing Partner</h6>
+                                    <h6 class="blog-post-title">Front becomes an official Instagram Marketing
+                                        Partner</h6>
                                 </a>
                             </div>
                             <div class="col-md-6 blog-post" data-aos="fade-up">
@@ -76,7 +79,8 @@
                                 </div>
                                 <p class="blog-post-category">Blog post</p>
                                 <a href="#!" class="blog-post-permalink">
-                                    <h6 class="blog-post-title">Front becomes an official Instagram Marketing Partner</h6>
+                                    <h6 class="blog-post-title">Front becomes an official Instagram Marketing
+                                        Partner</h6>
                                 </a>
                             </div>
                         </div>
@@ -87,7 +91,8 @@
                                 </div>
                                 <p class="blog-post-category">Blog post</p>
                                 <a href="#!" class="blog-post-permalink">
-                                    <h6 class="blog-post-title">Front becomes an official Instagram Marketing Partner</h6>
+                                    <h6 class="blog-post-title">Front becomes an official Instagram Marketing
+                                        Partner</h6>
                                 </a>
                             </div>
                             <div class="col-md-6 blog-post" data-aos="fade-up">
@@ -96,7 +101,8 @@
                                 </div>
                                 <p class="blog-post-category">Blog post</p>
                                 <a href="#!" class="blog-post-permalink">
-                                    <h6 class="blog-post-title">Front becomes an official Instagram Marketing Partner</h6>
+                                    <h6 class="blog-post-title">Front becomes an official Instagram Marketing
+                                        Partner</h6>
                                 </a>
                             </div>
                         </div>
@@ -107,20 +113,21 @@
                         <h5 class="widget-title">Популярные посты</h5>
                         <ul class="post-list">
                             @foreach($popularPosts as $post)
-                            <li class="post">
-                                <a href="{{ route('post.show', $post->id) }}" class="post-permalink media">
-                                    <img src="{{ '/storage/' . $post->preview_image }}" alt="blog post">
-                                    <div class="media-body">
-                                        <h6 class="post-title">{{ $post->title }}</h6>
-                                    </div>
-                                </a>
-                            </li>
+                                <li class="post">
+                                    <a href="{{ route('post.show', $post->id) }}" class="post-permalink media">
+                                        <img src="{{ asset('/storage/' . $post->preview_image) }}" alt="blog post">
+                                        <div class="media-body">
+                                            <h6 class="post-title">{{ $post->title }}</h6>
+                                        </div>
+                                    </a>
+                                </li>
                             @endforeach
                         </ul>
                     </div>
                     <div class="widget">
                         <h5 class="widget-title">Categories</h5>
-                        <img src="{{ asset('assets/images/blog_widget_categories.jpg') }}" alt="categories" class="w-100">
+                        <img src="{{ asset('assets/images/blog_widget_categories.jpg') }}" alt="categories"
+                             class="w-100">
                     </div>
                 </div>
             </div>
