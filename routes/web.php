@@ -30,6 +30,14 @@ Route::group(['namespace' => 'Post', 'prefix' => 'posts'], function () {
     });
 });
 
+Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function () {
+    Route::get('/', 'IndexController')->name('category.index');
+
+    Route::group(['namespace' => 'Post', 'prefix' => '/{category}/posts'], function () {
+        Route::get('/', 'IndexController')->name('category.post.index');
+    });
+});
+
 Route::group(['namespace' => 'Personal', 'prefix' => 'personal', 'middleware' => ['auth', 'verified']], function () {
     Route::group(['namespace' => 'Main', 'prefix' => 'main'], function () {
         Route::get('/', 'IndexController')->name('personal.main.index');
